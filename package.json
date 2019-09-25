@@ -9,11 +9,10 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn run lint"
+      "pre-commit": "yarn workspaces run precommit"
     }
   },
   "scripts": {
-    "test": "yarn workspaces run test",
-    "lint": "yarn workspaces run lint"
+    "test": "yarn workspaces run test"
   }
 }
