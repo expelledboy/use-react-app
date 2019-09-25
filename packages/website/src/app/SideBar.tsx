@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+import clsx from "clsx";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
 import List from "@material-ui/core/List";
@@ -20,6 +21,27 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     drawerPaper: {
       width: drawerWidth
+    },
+    drawerOpen: {
+      width: drawerWidth,
+      transition: theme.transitions.create("width", {
+        easing: theme.transitions.easing.sharp,
+        duration: theme.transitions.duration.enteringScreen
+      })
+    },
+    drawerClose: {
+      transition: theme.transitions.create("width", {
+        easing: theme.transitions.easing.sharp,
+        duration: theme.transitions.duration.leavingScreen
+      }),
+      overflowX: "hidden",
+      width: theme.spacing(6) + 1,
+      [theme.breakpoints.up("sm")]: {
+        width: theme.spacing(8) + 1
+      }
+    },
+    content: {
+      paddingTop: 70
     }
   })
 );
@@ -29,15 +51,22 @@ const SideBar: FC<ISideBar> = ({ children, open }) => {
 
   return (
     <Drawer
-      className={classes.drawer}
-      variant="persistent"
-      anchor="left"
-      open={open}
+      variant="permanent"
+      className={clsx(classes.drawer, {
+        [classes.drawerOpen]: open,
+        [classes.drawerClose]: !open
+      })}
       classes={{
-        paper: classes.drawerPaper
+        paper: clsx({
+          [classes.drawerOpen]: open,
+          [classes.drawerClose]: !open
+        })
       }}
+      open={open}
     >
-      <List>{children}</List>
+      <div className={classes.content}>
+        <List>{children}</List>
+      </div>
     </Drawer>
   );
 };

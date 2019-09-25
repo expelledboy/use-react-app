@@ -1,19 +1,20 @@
 # Web Up
 
-One-stop shop web app.
+One-stop shop web app template.
+
+Focus:
+
+- Bleeding edge!
+- Simple but complete
 
 Using:
 
 - Typescript
+- Yarn workspaces
 - React with hooks
 - GraphQL with Nexus and Apollo
 - Simple JWT Authentication
 - Docker deployment
-
-Focus:
-
-- Simple but complete
-- Bleeding edge
 
 ## Getting Started
 

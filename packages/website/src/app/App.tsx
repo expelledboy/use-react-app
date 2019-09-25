@@ -14,7 +14,7 @@ import Home from "pages/Home";
 const title = "My Cool App";
 
 const App: FC = () => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
 
   const toggleOpen = () => setOpen(!open);
 

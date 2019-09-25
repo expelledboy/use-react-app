@@ -8,7 +8,10 @@ import ListItemText from "@material-ui/core/ListItemText";
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     active: {
-      color: "blue",
+      "& svg": {
+        fill: theme.palette.primary.main
+      },
+      color: theme.palette.primary.main,
       textDecoration: "none"
     },
     inactive: {

@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "precommit": "grep lint ./package.json",
     "start": "ts-node-dev --no-notify --respawn --transpileOnly ./src",
     "postinstall": "prisma2 generate",
     "seed": "ts-node prisma/seed.ts",

@@ -18,6 +18,9 @@ const useStyles = makeStyles((theme: Theme) =>
     root: {
       flexGrow: 1
     },
+    appBar: {
+      zIndex: theme.zIndex.drawer + 1
+    },
     menuButton: {
       marginRight: theme.spacing(2)
     },
@@ -34,7 +37,7 @@ const Header: FC<IHeader> = ({ children, title, toggleMenu }) => {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="fixed" className={classes.appBar}>
         <Toolbar>
           <IconButton
             edge="start"
