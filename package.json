@@ -1,0 +1,8 @@
+{
+  "name": "use-react-app",
+  "private": true,
+  "workspaces": ["packages/*"],
+  "scripts": {
+    "test": "yarn workspaces run test"
+  }
+}
