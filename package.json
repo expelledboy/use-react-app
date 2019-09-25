@@ -12,6 +12,9 @@
       "pre-commit": "yarn workspaces run precommit"
     }
   },
+  "resolutions": {
+    "graphql": "14.5.8"
+  },
   "scripts": {
     "test": "yarn workspaces run test"
   }
