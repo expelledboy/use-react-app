@@ -1,0 +1,21 @@
+{
+  "name": "use-react-app",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "dependencies": {
+    "husky": "^3.0.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn workspaces run precommit"
+    }
+  },
+  "resolutions": {
+    "graphql": "14.5.8"
+  },
+  "scripts": {
+    "test": "yarn workspaces run test"
+  }
+}
